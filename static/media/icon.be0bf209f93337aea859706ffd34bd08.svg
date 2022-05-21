@@ -1,0 +1,22 @@
+<svg width="86" height="57" viewBox="0 0 86 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="25.5432" cy="27.597" r="19.6522" stroke="white"/>
+<circle cx="45.8239" cy="27.597" r="19.6522" stroke="white"/>
+<circle cx="65.8478" cy="27.597" r="16.0582" stroke="white"/>
+<circle cx="65.8477" cy="27.597" r="12.2075" stroke="white"/>
+<circle cx="65.8478" cy="27.597" r="8.61343" stroke="white"/>
+<circle cx="65.8478" cy="27.597" r="5.53284" stroke="white"/>
+<circle cx="65.8477" cy="27.597" r="2.70896" stroke="white"/>
+<circle cx="65.8478" cy="27.597" r="19.6522" stroke="white"/>
+<mask id="mask0_10_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="-1" width="57" height="58">
+<line x1="-0.318848" y1="25.5432" x2="31.0006" y2="-0.385157" stroke="white"/>
+<line x1="0.964721" y1="29.9074" x2="32.2841" y2="3.97904" stroke="white"/>
+<line x1="0.976599" y1="36.5725" x2="37.9438" y2="7.82025" stroke="white"/>
+<line x1="5.08402" y1="44.274" x2="42.0512" y2="15.5217" stroke="white"/>
+<line x1="13.0423" y1="47.868" x2="50.0094" y2="19.1158" stroke="white"/>
+<line x1="15.8661" y1="52.4889" x2="52.8333" y2="23.7367" stroke="white"/>
+<line x1="18.1767" y1="56.0829" x2="55.1438" y2="27.3307" stroke="white"/>
+</mask>
+<g mask="url(#mask0_10_29)">
+<circle cx="25.4149" cy="27.4686" r="20.0239" fill="white"/>
+</g>
+</svg>
