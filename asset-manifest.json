@@ -1,12 +1,7 @@
 {
   "files": {
-<<<<<<< HEAD
-    "main.css": "/static/css/main.c857dd1b.css",
-    "main.js": "/static/js/main.bf12f57d.js",
-=======
-    "main.css": "/static/css/main.4f534a72.css",
-    "main.js": "/static/js/main.95751627.js",
->>>>>>> d28fc67 (air5)
+    "main.css": "/static/css/main.e424c8c9.css",
+    "main.js": "/static/js/main.00c01ffc.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/squarePicture.svg": "/static/media/squarePicture.4b117846bcd2c771027d7a9482bcbf31.svg",
     "static/media/Mont-ThinItalic.eot": "/static/media/Mont-ThinItalic.5510e8d36aaaf841911a.eot",
@@ -73,7 +68,6 @@
     "static/media/Mont-ExtraLight.woff2": "/static/media/Mont-ExtraLight.a6dd2b46738cbd085a5a.woff2",
     "static/media/Mont-Thin.woff2": "/static/media/Mont-Thin.fd50e23452a4f62e1e58.woff2",
     "static/media/Mont-Black.woff2": "/static/media/Mont-Black.2e299ff4d72dac880c22.woff2",
-    "static/media/exampleOfGraph.png": "/static/media/exampleOfGraph.1c6e16bbdb4799ea5b51.png",
     "static/media/Misto.ttf": "/static/media/Misto.33c57b0e3df04c32d024.ttf",
     "static/media/icon.svg": "/static/media/icon.be0bf209f93337aea859706ffd34bd08.svg",
     "static/media/iconNav.svg": "/static/media/iconNav.be0bf209f93337aea859706ffd34bd08.svg",
@@ -82,22 +76,12 @@
     "static/media/arrow.svg": "/static/media/arrow.732dfbf01e8e94d1d119ad3cc73d6bbc.svg",
     "static/media/greenEllipse.svg": "/static/media/greenEllipse.fdaeab358223fd12dbadf4975d7b7722.svg",
     "static/media/redEllipse.svg": "/static/media/redEllipse.c6dedd406f69b905aebd492b7ef4a202.svg",
-<<<<<<< HEAD
-    "main.c857dd1b.css.map": "/static/css/main.c857dd1b.css.map",
-    "main.bf12f57d.js.map": "/static/js/main.bf12f57d.js.map",
+    "main.e424c8c9.css.map": "/static/css/main.e424c8c9.css.map",
+    "main.00c01ffc.js.map": "/static/js/main.00c01ffc.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c857dd1b.css",
-    "static/js/main.bf12f57d.js"
-=======
-    "main.4f534a72.css.map": "/static/css/main.4f534a72.css.map",
-    "main.95751627.js.map": "/static/js/main.95751627.js.map",
-    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.4f534a72.css",
-    "static/js/main.95751627.js"
->>>>>>> d28fc67 (air5)
+    "static/css/main.e424c8c9.css",
+    "static/js/main.00c01ffc.js"
   ]
 }
