@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background-color: rgb(112, 112, 112);
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 90vh;
+            height: 90vh;
+        }
+
+        .wrapper {
+            display: flex;
+        }
+
+        .row{
+            height: 90vh;
+            width: 100%;
+            background-color: rgb(158, 158, 158);
+            display: grid;
+        }
+
+        .row button{
+            cursor: pointer;
+            width: calc(90vh / 8);
+            height: 100%;
+            border: 1px solid grey;
+            border-radius: 50%;
+            background-color: aliceblue;
+        }
+        .row button:hover {background-color: rgb(213, 214, 216);}
+
+        #codeText {
+            position: absolute;
+            bottom: 2%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let buttonsData = [
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1]
+        ]
+
+        function arrayToBin(arr) {
+            let result = ''
+            for(el in arr) result += arr[el]
+            return result
+        }
+
+        function binToHex(n) {
+            let o = Number(parseInt(n, 2)).toString(16).toUpperCase().length == 1 ? false : true
+            return '0x' + (o?'':'0') + Number(parseInt(n, 2)).toString(16).toUpperCase();
+        }
+
+        function render() {
+            let result = '{'
+            for (i in buttonsData) {
+                result += binToHex(arrayToBin(buttonsData[i])) + ', '
+            }
+            result = result.slice(0, -2)
+            result += '}'
+            document.getElementById('codeText').innerText = result
+            navigator.clipboard.writeText(result);
+        }
+
+        function clickBtn(event) {
+            let button = event.target
+            let parentId = button.parentElement.id
+            let ButtonId = button.id
+            if(buttonsData[parentId][ButtonId] == 1) {
+                buttonsData[parentId][ButtonId] = 0
+                button.style['background-color'] = '#27E34C'
+            } else {
+                buttonsData[parentId][ButtonId] = 1
+                button.style['background-color'] = 'aliceblue'
+            }
+            render()
+            console.log('[' + parentId + ', ' + ButtonId + ']')            
+        }
+    </script>
+    <div class="container">
+        <div class="wrapper">
+            <div class="row" id="7">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+            <div class="row" id="0">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+            <div class="row" id="1">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+            <div class="row" id="2">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+            <div class="row" id="3">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+            <div class="row" id="4">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+            <div class="row" id="5">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+            <div class="row" id="6">
+                <button id="7" onclick="clickBtn(event)"></button>
+                <button id="6" onclick="clickBtn(event)"></button>
+                <button id="5" onclick="clickBtn(event)"></button>
+                <button id="4" onclick="clickBtn(event)"></button>
+                <button id="3" onclick="clickBtn(event)"></button>
+                <button id="2" onclick="clickBtn(event)"></button>
+                <button id="1" onclick="clickBtn(event)"></button>
+                <button id="0" onclick="clickBtn(event)"></button>
+            </div>
+         </div>
+    </div>
+    <span id="codeText">{0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}</span>
+</body>
+</html>
