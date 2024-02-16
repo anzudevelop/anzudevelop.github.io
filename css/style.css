@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+:root {
+    --main-bg-color: rgb(221, 221, 221);
+    --font: 'Oswald', 'Courier New', Courier, monospace;
+    --orange: #FF6633;
+    --orange-hover: #ff8056;
+    --green: #999966;
+    --green-hover: #b6b686;
+    --blue: #336666;
+    --blue-hover: #498383;
+}
+body {
+    background: var(--main-bg-color);
+    font-family: var(--font);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {font-weight: 350; margin: 0;}
+h2 {font-weight: 350; margin: 0;}
+p {font-weight: 350; margin: 0;}
+
+#app {
+    position: relative;
+    width: 1140px;
+}
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.header h1 {
+    font-size: 22px;
+    color: var(--green);
+}
+.header h1:nth-child(odd) {
+    cursor: pointer;
+}
+.header h1:nth-child(odd):hover {
+    color: var(--green-hover);
+}
+.headerPicture {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.headerPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.headerPicture h1 {
+    z-index: 2;
+    top: 29px;
+    left: 721px;
+    position: absolute;
+    font-size: 43px;
+    color: var(--blue);
+    line-height: 1.4;
+}
+.headerPicture h2 {
+    z-index: 2;
+    bottom: 10px;
+    left: 721px;
+    position: absolute;
+    font-size: 26px;
+    color: var(--blue);
+    line-height: 1.4;
+}
+.content {
+    width: 100%;
+}
+.item {
+    position: relative;
+    width: 100%;
+}
+.itemName {
+    height: 130px;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.itemName h1 {
+    font-size: 45px;
+    color: var(--green);
+    white-space: nowrap;
+    line-height: 100%;
+}
+.itemLine {
+    margin: 16px auto 0 auto;
+    width: 100%;
+    height: 0;
+    border: 1px solid var(--orange);
+}
+.itemMain {
+    height: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between
+}
+.item:nth-child(even) .itemName {
+    flex-direction: row-reverse
+}
+.item:nth-child(even) .itemMain {
+    flex-direction: row-reverse
+}
+.itemMain img{
+    width: 360px;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: contain;
+}
+.itemMainCard {
+    position: relative;
+    width: 738px;
+    height: 100%;
+}
+.itemMainCard p {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+.itemMainCard h1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 39px;
+    color: var(--green);
+}
+.buyButton {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    width: 118px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange);
+}
+.buyButton p {
+    color: white;
+    font-size: 27px;
+    font-weight: 350;
+}
+.buyButton:hover {
+    background: var(--orange-hover);
+}
+.itemExtraPictures {
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between
+}
+.itemExtraPictures img {
+    width: 300px;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+.aboutMeName {
+    height: 130px;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.aboutMeName h1 {
+    font-size: 55px;
+    color: var(--blue);
+    white-space: nowrap;
+    line-height: 100%;
+    margin-right: 20px;
+    font-weight: 400;
+}
+.aboutMeContent {
+    width: 100%;
+    height: 530px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.aboutMeContent img {
+    width: 420px;
+    height: 100%;
+    border-radius: 15px;
+}
+.aboutMeContent p {
+    width: 680px;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+.reviewName {
+    height: 130px;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.reviewName h1 {
+    font-size: 55px;
+    color: var(--blue);
+    white-space: nowrap;
+    line-height: 100%;
+    margin-right: 20px;
+    font-weight: 400;
+}
+.review {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.review:nth-child(odd) {
+    flex-direction: row-reverse
+}
+.review img {
+    width: 360px;
+    height: 360px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+.review p {
+    width: 720px;
+    color: black;
+    font-size: 18px;
+    font-weight: 400; 
+}

@@ -2,207 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style type="text/css">
-        body {
-            background-color: rgb(112, 112, 112);
-        }
-
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -55%);
-            width: 90vh;
-            height: 90vh;
-        }
-
-        .wrapper {
-            display: flex;
-        }
-
-        .row{
-            height: 90vh;
-            width: 100%;
-            background-color: rgb(158, 158, 158);
-            display: grid;
-        }
-
-        .row button{
-            cursor: pointer;
-            width: calc(90vh / 8);
-            height: 100%;
-            border: 1px solid grey;
-            border-radius: 50%;
-            background-color: aliceblue;
-        }
-        .row button:hover {background-color: rgb(213, 214, 216);}
-
-        #codeText {
-            position: absolute;
-            bottom: 2%;
-            left: 50%;
-            transform: translate(-50%, 0);
-            color: aliceblue;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        @media (max-width: 1024px) {
-            .container {
-                width: 90vw;
-                height: 90vw;
-            }
-            .row{
-                height: 90vw;
-            }
-            .row button{
-                width: calc(90vw / 8);
-            }
-            #codeText {
-                bottom: 5%;
-                left: 50%;
-                transform: translateX(-47%);
-                width: 100%;
-            }
-        }
-    </style>
+    <title>Hand Stich</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <script>
-        let buttonsData = [
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1]
-        ]
+    <div id="app">
+        <div class="header">
+            <h1 @click="alert('Скрола пока нет')">Ремни</h1>
+            <h1>&nbsp;·&nbsp;</h1>
+            <h1 @click="alert('Скрола пока нет')">Кошельки</h1>
+            <h1>&nbsp;·&nbsp;</h1>
+            <h1 @click="alert('Скрола пока нет')">Картхолдеры</h1>
+            <h1>&nbsp;·&nbsp;</h1>
+            <h1 @click="alert('Скрола пока нет')">Органайзеры</h1>
+            <h1>&nbsp;·&nbsp;</h1>
+            <h1 @click="alert('Скрола пока нет')">Часовые ремешки</h1>
+        </div>
+        <div class="headerPicture">
+            <img src="./image/1140_300.png">
+            <h1>
+                Изделия<br/>
+                из премиальных<br/>
+                сортов кожи. Hand Stich
+            </h1>
+            <h2>Ручная работа • Качество • Эксклюзив</h2>
+        </div>
+        <div class="content">
+            <div class="item" v-for="item in items">
+                <div class="itemName">
+                    <h1>{{ item.name }}</h1>&nbsp;
+                    <div class="itemLine"></div>
+                </div>
+                <div class="itemMain">
+                    <img :src="item.mainImage">
+                    <div class="itemMainCard">
+                        <p v-html="item.description"></p>
+                        <h1>Стоимость: {{ item.price }}р.</h1>
+                        <div class="buyButton" @click="alert('Купить пока что нельзя')"><p>Купить ➤</p></div>
+                    </div>
+                </div>
+                <div class="itemExtraPictures">
+                    <img :src="image" v-for="image in item.extraImages">
+                </div>
+            </div>
+        </div>
+        <div class="aboutMe">
+            <div class="aboutMeName">
+                <h1>Моя мастерская</h1>
+                <div class="itemLine"></div>
+            </div>
+            <div class="aboutMeContent">
+                <img src="./image/aboutMe.png">
+                <p>Здравствуйте, меня зовут Иван...<br/>← тут картинка 420x530px</p>
+            </div>
+        </div>
+        <div class="reviews">
+            <div class="reviewName">
+                <h1>Отзывы о моих работах</h1>
+                <div class="itemLine"></div>
+            </div>
+            <div class="review" v-for="review in reviews">
+                <img :src="review.img">
+                <p v-html="review.review"></p>
+            </div>
+        </div>
 
-        function arrayToBin(arr) {
-            let result = ''
-            for(el in arr) result += arr[el]
-            return result
-        }
-
-        function binToHex(n) {
-            let o = Number(parseInt(n, 2)).toString(16).toUpperCase().length == 1 ? false : true
-            return '0x' + (o?'':'0') + Number(parseInt(n, 2)).toString(16).toUpperCase();
-        }
-
-        function render() {
-            let result = '{'
-            for (i in buttonsData) {
-                result += binToHex(arrayToBin(buttonsData[i])) + ', '
-            }
-            result = result.slice(0, -2)
-            result += '}'
-            document.getElementById('codeText').innerText = result
-            navigator.clipboard.writeText(result);
-        }
-
-        function clickBtn(event) {
-            let button = event.target
-            let parentId = button.parentElement.id
-            let ButtonId = button.id
-            if(buttonsData[parentId][ButtonId] == 1) {
-                buttonsData[parentId][ButtonId] = 0
-                button.style['background-color'] = '#27E34C'
-            } else {
-                buttonsData[parentId][ButtonId] = 1
-                button.style['background-color'] = 'aliceblue'
-            }
-            render()
-            console.log('[' + parentId + ', ' + ButtonId + ']')            
-        }
-    </script>
-    <div class="container">
-        <div class="wrapper">
-            <div class="row" id="0">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-            <div class="row" id="1">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-            <div class="row" id="2">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-            <div class="row" id="3">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-            <div class="row" id="4">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-            <div class="row" id="5">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-            <div class="row" id="6">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-            <div class="row" id="7">
-                <button id="7" onclick="clickBtn(event)"></button>
-                <button id="6" onclick="clickBtn(event)"></button>
-                <button id="5" onclick="clickBtn(event)"></button>
-                <button id="4" onclick="clickBtn(event)"></button>
-                <button id="3" onclick="clickBtn(event)"></button>
-                <button id="2" onclick="clickBtn(event)"></button>
-                <button id="1" onclick="clickBtn(event)"></button>
-                <button id="0" onclick="clickBtn(event)"></button>
-            </div>
-         </div>
     </div>
-    <span id="codeText">{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}</span>
+    <script src="./vue.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
