@@ -67,6 +67,46 @@
                 <p v-html="review.review"></p>
             </div>
         </div>
+        <div class="formBuy">
+            <div class="formBuyName">
+                <h1>Заказ и оплата</h1>
+                <div class="itemLine"></div>
+            </div>
+            <div class="formArea">
+                <div class="form">
+                    <input type="text" placeholder="Наименование изделия">
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="text" placeholder="Телефон">
+                    <textarea type="text" placeholder="Комментарий к заказу"></textarea>
+                    <div class="buyButton" @click="alert('Отправить пока что нельзя')"><p>Отправить ➤</p></div>
+                </div>
+                <div class="formDescription">
+                    <p>
+                        Для заказа напишите Ваши контактные данные, и в ближайшее время я свяжусь с Вами и обсужу все
+                        условия и вопросы. Порядок заказа включает в себя предоплату 50% в случае, вторую часть оплаты
+                        Вы вносите по готовности изделия. Как правило срок изготовления составляет 3-4 рабочих дня. Перед
+                        отправкой и оплатой я высылаю подробные фотографии готового изделия. Вы можете напрямую
+                        Ваше Имя писать мне в телеграмм или в сообщения в социальную сеть Вонтакте.
+                    </p>
+                </div>
+                <div class="socials">
+                    <div class="social">
+                        <a class="link" href="https://t.me/hand_stich">
+                            <img src="./image/socials/tg.png">
+                            <p>t.me/hand_stich</p>
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a class="link" href="https://vk.com/handstich">
+                            <img src="./image/socials/vk.png">
+                            <p>vk.com/handstich</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer"></div>
 
     </div>
     <script src="./vue.min.js"></script>
