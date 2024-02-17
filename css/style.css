@@ -286,7 +286,6 @@ p {font-weight: 350; margin: 0;}
     resize: none;
     min-height: 150px;
     text-align: center;
-
 }
 .form .buyButton {
     transform: translateX(50%);
@@ -314,20 +313,32 @@ p {font-weight: 350; margin: 0;}
     display: flex;
     align-items: center;
 }
+.social {
+    position: relative;
+    height: 100%;
+}
 .link {
+    height: 100%;
     margin-left: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 36px;
 }
-.social img {
+.link img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
     margin-right: 10px;
+}
+.link p {
+    font-size: 18px;
 }
 a.link:active, /* активная/посещенная ссылка */
 a.link:hover,  /* при наведении */
 a.link {
   text-decoration: none;
-  color: #666;
+  color: var(--blue);
 }
 .footer {
     position: relative;
@@ -335,4 +346,310 @@ a.link {
     height: 50px;
     /* background: rgb(180, 180, 180);
     border-radius: 15px 15px 0 0; */
+}
+
+@media (min-width: 3000px) and (max-width: 4000px) {
+    #app {
+        width: 2280px;
+    }
+    .header {
+        height: 200px;
+    }
+    .header h1 {
+        font-size: 44px;
+    }
+    .headerPicture {
+        height: 600px;
+    }
+    .headerPicture h1 {
+        top: 60px;
+        left: 1442px;
+        font-size: 86px;
+    }
+    .headerPicture h2 {
+        bottom: 20px;
+        left: 1442px;
+        font-size: 52px;
+    }
+    .itemName {
+        height: 260px;
+    }
+    .itemName h1 {
+        font-size: 90px;
+    }
+    .itemLine {
+        border: 2px solid var(--orange);
+    }
+    .itemMain {
+        height: 720px;
+    }
+    .itemMain img{
+        width: 720px;
+    }
+    .itemMainCard {
+        width: 1474px;
+    }
+    .itemMainCard p {
+        font-size: 36px;
+    }
+    .itemMainCard h1 {
+        font-size: 78px;
+    }
+    .buyButton {
+        bottom: 10px;
+        width: 240px;
+        height: 90px;
+    }
+    .buyButton p {
+        font-size: 50px;
+    }
+    .itemExtraPictures {
+        margin-top: 100px;
+        height: 600px;
+    }
+    .itemExtraPictures img {
+        width: 600px;
+    }
+    .aboutMeName {
+        height: 260px;
+    }
+    .aboutMeName h1 {
+        font-size: 110px;
+        margin-right: 40px;
+    }
+    .aboutMeContent {
+        height: 1060px;
+    }
+    .aboutMeContent img {
+        width: 840px;
+    }
+    .aboutMeContent p {
+        width: 1360px;
+        font-size: 36px;
+    }
+    .reviewName {
+        height: 260px;
+    }
+    .reviewName h1 {
+        font-size: 110px;
+        margin-right: 40px;
+    }
+    .review {
+        margin-bottom: 100px;
+    }
+    .review img {
+        width: 720px;
+        height: 720px;
+    }
+    .review p {
+        width: 1440px;
+        font-size: 36px;
+    }
+    .formBuyName {
+        height: 260px;
+    }
+    .formBuyName h1 {
+        font-size: 110px;
+        margin-right: 40px;
+    }
+    .form {
+        width: 480px;
+        min-height: 800px;
+        padding: 40px 120px;
+    }
+    .form input {
+        padding: 10px 20px;
+        font-size: 36px;
+        margin-bottom: 40px;
+        border-radius: 10px;
+    }
+    .form textarea {
+        padding: 10px 20px;
+        font-size: 36px;
+        min-height: 300px;
+        border-radius: 10px;
+    }
+    .form .buyButton {
+        bottom: 40px;
+        width: 300px;
+    }
+    .form .buyButton p {
+        font-size: 40px;
+    }
+    .formDescription {
+        width: 1440px;
+    }
+    .formDescription p {
+        font-size: 36px;
+    }
+    .socials {
+        bottom: 10px;
+        height: 64px;
+    }
+    .link {
+        margin-left: 60px;
+    }
+    .link img {
+        margin-right: 20px;
+    }
+    .link p {
+        font-size: 36px;
+    }
+    .footer {
+        height: 100px;
+    }
+}
+@media (min-width: 2000px) and (max-width: 3000px) {
+    #app {
+        width: 1710px;
+    }
+    .header {
+        height: 150px;
+    }
+    .header h1 {
+        font-size: 33px;
+    }
+    .headerPicture {
+        height: 450px;
+    }
+    .headerPicture h1 {
+        top: 45px;
+        left: 1082px;
+        font-size: 65px;
+    }
+    .headerPicture h2 {
+        bottom: 15px;
+        left: 1082px;
+        font-size: 39px;
+    }
+    .itemName {
+        height: 195px;
+    }
+    .itemName h1 {
+        font-size: 68px;
+    }
+    .itemLine {
+        border: 1px solid var(--orange);
+    }
+    .itemMain {
+        height: 540px;
+    }
+    .itemMain img{
+        width: 540px;
+    }
+    .itemMainCard {
+        width: 1106px;
+    }
+    .itemMainCard p {
+        font-size: 27px;
+    }
+    .itemMainCard h1 {
+        font-size: 59px;
+    }
+    .buyButton {
+        bottom: 8px;
+        width: 180px;
+        height: 68px;
+    }
+    .buyButton p {
+        font-size: 38px;
+    }
+    .itemExtraPictures {
+        margin-top: 75px;
+        height: 450px;
+    }
+    .itemExtraPictures img {
+        width: 450px;
+    }
+    .aboutMeName {
+        height: 195px;
+    }
+    .aboutMeName h1 {
+        font-size: 83px;
+        margin-right: 30px;
+    }
+    .aboutMeContent {
+        height: 795px;
+    }
+    .aboutMeContent img {
+        width: 630px;
+    }
+    .aboutMeContent p {
+        width: 1020px;
+        font-size: 27px;
+    }
+    .reviewName {
+        height: 195px;
+    }
+    .reviewName h1 {
+        font-size: 83px;
+        margin-right: 30px;
+    }
+    .review {
+        margin-bottom: 75px;
+    }
+    .review img {
+        width: 540px;
+        height: 540px;
+    }
+    .review p {
+        width: 1080px;
+        font-size: 27px;
+    }
+    .formBuyName {
+        height: 195px;
+    }
+    .formBuyName h1 {
+        font-size: 83px;
+        margin-right: 30px;
+    }
+    .form {
+        width: 360px;
+        min-height: 600px;
+        padding: 30px 90px;
+    }
+    .form input {
+        padding: 8px 15px;
+        font-size: 27px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+    }
+    .form textarea {
+        padding:  8px 15px;
+        font-size: 27px;
+        min-height: 225px;
+        border-radius: 8px;
+    }
+    .form .buyButton {
+        bottom: 30px;
+        width: 225px;
+    }
+    .form .buyButton p {
+        font-size: 30px;
+    }
+    .formDescription {
+        width: 1080px;
+    }
+    .formDescription p {
+        font-size: 27px;
+    }
+    .socials {
+        bottom: 8px;
+        height: 48px;
+    }
+    .link {
+        margin-left: 45px;
+    }
+    .link img {
+        margin-right: 15px;
+    }
+    .link p {
+        font-size: 27px;
+    }
+    .footer {
+        height: 75px;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1500px) {
+
 }
