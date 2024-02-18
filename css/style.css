@@ -651,5 +651,509 @@ a.link {
     }
 }
 @media (min-width: 1000px) and (max-width: 1500px) {
-
+    #app {
+        width: 855px;
+    }
+    .header {
+        height: 75px;
+    }
+    .header h1 {
+        font-size: 20px;
+    }
+    .headerPicture {
+        height: 225px;
+    }
+    .headerPicture h1 {
+        top: 22px;
+        left: 541px;
+        font-size: 33px;
+    }
+    .headerPicture h2 {
+        bottom: 8px;
+        left: 541px;
+        font-size: 20px;
+    }
+    .itemName {
+        height: 100px;
+    }
+    .itemName h1 {
+        font-size: 34px;
+    }
+    .itemLine {
+        border: 1px solid var(--orange);
+    }
+    .itemMain {
+        height: 270px;
+    }
+    .itemMain img{
+        width: 270px;
+    }
+    .itemMainCard {
+        width: 553px;
+    }
+    .itemMainCard p {
+        font-size: 15px;
+    }
+    .itemMainCard h1 {
+        font-size: 30px;
+    }
+    .buyButton {
+        bottom: 4px;
+        width: 90px;
+        height: 34px;
+    }
+    .buyButton p {
+        font-size: 19px;
+    }
+    .itemExtraPictures {
+        margin-top: 40px;
+        height: 225px;
+        width: 100%;
+    }
+    .itemExtraPictures img {
+        width: 225px;
+    }
+    .aboutMeName {
+        height: 100px;
+    }
+    .aboutMeName h1 {
+        font-size: 40px;
+        margin-right: 15px;
+    }
+    .aboutMeContent {
+        height: 398px;
+    }
+    .aboutMeContent img {
+        width: 315px;
+    }
+    .aboutMeContent p {
+        width: 510px;
+        font-size: 15px;
+    }
+    .reviewName {
+        height: 100px;
+    }
+    .reviewName h1 {
+        font-size: 40px;
+        margin-right: 15px;
+    }
+    .review {
+        margin-bottom: 37px;
+    }
+    .review img {
+        width: 270px;
+        height: 270px;
+    }
+    .review p {
+        width: 540px;
+        font-size: 15px;
+    }
+    .formBuyName {
+        height: 100px;
+    }
+    .formBuyName h1 {
+        font-size: 40px;
+        margin-right: 15px;
+    }
+    .form {
+        width: 180px;
+        min-height: 300px;
+        padding: 15px 45px;
+    }
+    .form input {
+        padding: 4px 7px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+    .form textarea {
+        padding:  4px 7px;
+        font-size: 15px;
+        min-height: 112px;
+        border-radius: 4px;
+    }
+    .form .buyButton {
+        bottom: 10px;
+        width: 112px;
+    }
+    .form .buyButton p {
+        font-size: 15px;
+    }
+    .formDescription {
+        width: 540px;
+    }
+    .formDescription p {
+        font-size: 15px;
+    }
+    .socials {
+        bottom: 4px;
+        height: 24px;
+    }
+    .link {
+        margin-left: 24px;
+    }
+    .link img {
+        margin-right: 7px;
+    }
+    .link p {
+        font-size: 15px;
+    }
+    .footer {
+        height: 50px;
+    }
+}
+@media (min-width: 700px) and (max-width: 1000px) {
+    #app {
+        width: 600px;
+    }
+    .header {
+        height: 70px;
+    }
+    .header h1 {
+        font-size: 20px;
+    }
+    .headerPicture {
+        height: 150px;
+    }
+    .headerPicture h1 {
+        top: 10px;
+        left: 370px;
+        font-size: 20px;
+    }
+    .headerPicture h2 {
+        bottom: 5px;
+        left: 370px;
+        font-size: 15px;
+    }
+    .itemName {
+        height: 70px;
+    }
+    .itemName h1 {
+        font-size: 20px;
+    }
+    .itemLine {
+        margin-top: 7px;
+        border: 1px solid var(--orange);
+    }
+    .itemMain {
+        height: 200px;
+    }
+    .itemMain img{
+        width: 200px;
+    }
+    .itemMainCard {
+        width: 370px;
+    }
+    .itemMainCard p {
+        font-size: 10px;
+    }
+    .itemMainCard h1 {
+        font-size: 15px;
+    }
+    .buyButton {
+        bottom: 2px;
+        width: 60px;
+        height: 20px;
+    }
+    .buyButton p {
+        font-size: 12px;
+    }
+    .itemExtraPictures {
+        margin-top: 20px;
+        height: 150px;
+        width: 100%;
+    }
+    .itemExtraPictures img {
+        width: 150px;
+    }
+    .aboutMeName {
+        height: 70px;
+    }
+    .aboutMeName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .aboutMeContent {
+        height: 200px;
+    }
+    .aboutMeContent img {
+        width: 157px;
+    }
+    .aboutMeContent p {
+        width: 400px;
+        font-size: 10px;
+    }
+    .reviewName {
+        height: 70px;
+    }
+    .reviewName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .review {
+        margin-bottom: 20px;
+    }
+    .review img {
+        width: 150px;
+        height: 150px;
+    }
+    .review p {
+        width: 400px;
+        font-size: 10px;
+    }
+    .formBuyName {
+        height: 70px;
+    }
+    .formBuyName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .form {
+        width: 120px;
+        min-height: 200px;
+        padding: 10px 25px;
+    }
+    .form input {
+        padding: 2px 3px;
+        font-size: 10px;
+        margin-bottom: 10px;
+        border-radius: 2px;
+    }
+    .form textarea {
+        padding:  2px 3px;
+        font-size: 10px;
+        min-height: 70px;
+        border-radius: 2px;
+    }
+    .form .buyButton {
+        bottom: 10px;
+        width: 70px;
+    }
+    .form .buyButton p {
+        font-size: 10px;
+    }
+    .formDescription {
+        width: 400px;
+    }
+    .formDescription p {
+        font-size: 10px;
+    }
+    .socials {
+        bottom: 2px;
+        height: 16px;
+    }
+    .link {
+        margin-left: 16px;
+    }
+    .link img {
+        margin-right: 5px;
+    }
+    .link p {
+        font-size: 10px;
+    }
+    .footer {
+        height: 50px;
+    }
+}
+@media (min-width: 0px) and (max-width: 700px) {
+    #app {
+        width: 90vw;
+    }
+    .header {
+        height: 50px;
+    }
+    .header h1 {
+        font-size: 11px;
+    }
+    .headerPicture {
+        height: 90px;
+    }
+    .headerPicture h1 {
+        top: 10%;
+        left: 50vw;
+        font-size: 4vw;
+        line-height: 1;
+    }
+    .headerPicture h2 {
+        bottom: 2px;
+        left: 50vw;
+        font-size: 2.5vw;
+    }
+    .item{
+        margin-top: 20px;
+    }
+    .item:first-child {
+        margin-top: 10px;
+    }
+    .itemName {
+        height: 40px;
+        margin-bottom: 5px;
+    }
+    .itemName h1 {
+        font-size: 1.2em;
+    }
+    .itemLine {
+        display: none;
+        margin-top: 4px;
+        border: 1px solid var(--orange);
+    }
+    .itemMain {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    .itemMain p {
+        margin-bottom: 40px;
+    }
+    .item:nth-child(even) .itemName {
+        flex-direction: row
+    }
+    .item:nth-child(even) .itemMain {
+        flex-direction: column
+    }
+    .itemMain img{
+        width: 80vw;
+        height: 80vw;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    .itemMainCard {
+        width: 100%;
+    }
+    .itemMainCard p {
+        font-size: 15px;
+    }
+    .itemMainCard h1 {
+        font-size: 20px;
+    }
+    .buyButton {
+        bottom: 3px;
+        width: 100px;
+        height: 30px;
+    }
+    .buyButton p {
+        margin: 0;
+        font-size: 20px;
+    }
+    .itemExtraPictures {
+        margin-top: 10px;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .itemExtraPictures img {
+        width: 80vw;
+        margin-top: 10px;
+    }
+    .aboutMeName {
+        margin-top: 20px;
+        height: 50px;
+    }
+    .aboutMeName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .aboutMeContent {
+        height: auto;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .aboutMeContent img {
+        width: 70vw;
+    }
+    .aboutMeContent p {
+        width: 400px;
+        width: 90vw;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .reviewName {
+        height: 50px;
+    }
+    .reviewName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .review {
+        margin-bottom: 30px;
+    }
+    .review img {
+        width: 120px;
+        height: 120px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .review p {
+        width: 100%;
+        font-size: 12px;
+    }
+    .formBuy {
+        align-items: center;
+        width: 90vw;
+    }
+    .formBuyName {
+        height: 50px;
+    }
+    .formBuyName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .formArea {
+        flex-direction: column-reverse;
+    }
+    .form {
+        width: 80vw;
+        height: 190px;
+        padding: 15px 5vw;
+    }
+    .form input {
+        padding: 2px 3px;
+        height: 40px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .form textarea {
+        padding:  2px 3px;
+        font-size: 20px;
+        min-height: 150px;
+        border-radius: 5px;
+    }
+    .form .buyButton {
+        bottom: 20px;
+        width: 150px;
+        height: 40px;
+    }
+    .form .buyButton p {
+        font-size: 20px;
+    }
+    .formDescription {
+        width: 90vw;
+    }
+    .formDescription p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .socials {
+        bottom: -35px;
+        left: 0;
+        height: 25px;
+        flex-direction: column;
+    }
+    .social {
+        margin-bottom:7px;
+    }
+    .link {
+        margin-left: 20px;
+    }
+    .link img {
+        margin-right: 7px;
+    }
+    .link p {
+        font-size: 15px;
+    }
+    .footer {
+        height: 100px;
+    }
 }
