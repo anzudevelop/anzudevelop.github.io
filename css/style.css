@@ -1139,7 +1139,7 @@ a.link {
         bottom: -35px;
         left: 0;
         height: 25px;
-        flex-direction: column;
+        justify-content: space-between;
     }
     .social {
         margin-bottom:7px;
@@ -1154,6 +1154,7 @@ a.link {
         font-size: 15px;
     }
     .footer {
+        z-index: -1;
         height: 100px;
     }
 }
