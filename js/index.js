@@ -56,9 +56,20 @@ const app = new Vue({
                 img: './image/vlad.png',
                 review: 'Сразу скажу что качество изделия 10 из 10, как минимум не уступает сегменту lux, а где-то даже превосходит его. Я поклонник выражения цена-качество, но тут мону ответственно заявить, что цена для такой продукции низковата, редко такое встретишь.<br/><br/>Владислав Соловей.',
             },
-        ]
+        ],
+        buyItem: ''
     },
     methods: {
-        
+        scrollClick: function(target) {
+            document.getElementById(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        },
+        buy: function(name) {
+            this.buyItem = name
+            document.getElementById('buy').scrollIntoView({
+                behavior: 'smooth'
+            });
+        },
     },
 })

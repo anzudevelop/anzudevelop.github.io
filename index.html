@@ -9,15 +9,15 @@
 <body>
     <div id="app">
         <div class="header">
-            <h1 @click="alert('Скрола пока нет')">Ремни</h1>
+            <h1 @click="scrollClick('Джинсовый ремень из натуральной кожи')">Ремни</h1>
             <h1>&nbsp;·&nbsp;</h1>
-            <h1 @click="alert('Скрола пока нет')">Кошельки</h1>
+            <h1 @click="scrollClick('Ретрокошелек с отделом под карты')">Кошельки</h1>
             <h1>&nbsp;·&nbsp;</h1>
-            <h1 @click="alert('Скрола пока нет')">Картхолдеры</h1>
+            <h1 @click="scrollClick('Картхолдер с потайным карманом')">Картхолдеры</h1>
             <h1>&nbsp;·&nbsp;</h1>
-            <h1 @click="alert('Скрола пока нет')">Органайзеры</h1>
+            <h1 @click="scrollClick('Документ-органайзер портативного размера')">Органайзеры</h1>
             <h1>&nbsp;·&nbsp;</h1>
-            <h1 @click="alert('Скрола пока нет')">Часовые ремешки</h1>
+            <h1 @click="scrollClick('Кожаные часовые ремешки')">Часовые ремешки</h1>
         </div>
         <div class="headerPicture">
             <img src="./image/1140_300.png">
@@ -29,7 +29,7 @@
             <h2>Ручная работа • Качество • Эксклюзив</h2>
         </div>
         <div class="content">
-            <div class="item" v-for="item in items">
+            <div class="item" v-for="item in items" :id="item.name">
                 <div class="itemName">
                     <h1>{{ item.name }}</h1>&nbsp;&nbsp;
                     <div class="itemLine"></div>
@@ -39,7 +39,7 @@
                     <div class="itemMainCard">
                         <p v-html="item.description"></p>
                         <h1>Стоимость: {{ item.price }}р.</h1>
-                        <div class="buyButton" @click="alert('Купить пока что нельзя')"><p>Купить ➤</p></div>
+                        <div class="buyButton" @click="buy(item.name)"><p>Купить ➤</p></div>
                     </div>
                 </div>
                 <div class="itemExtraPictures">
@@ -79,14 +79,14 @@
                 <p v-html="review.review"></p>
             </div>
         </div>
-        <div class="formBuy">
+        <div class="formBuy" id="buy">
             <div class="formBuyName">
                 <h1>Заказ и оплата</h1>
                 <div class="itemLine"></div>
             </div>
             <div class="formArea">
                 <div class="form">
-                    <input type="text" placeholder="Наименование изделия">
+                    <input type="text" placeholder="Наименование изделия" v-model="buyItem">
                     <input type="text" placeholder="Ваше имя">
                     <input type="text" placeholder="Телефон">
                     <textarea type="text" placeholder="Комментарий к заказу"></textarea>
