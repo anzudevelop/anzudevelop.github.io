@@ -46,6 +46,23 @@
                     <img :src="image" v-for="image in item.extraImages">
                 </div>
             </div>
+            <div class="itemMobile" v-for="item in items" :id="item.name">
+                <div class="itemMobileName">
+                    <h1>{{ item.name }}</h1>
+                </div>
+                <div class="itemMobilePictures">
+                    <img :src="item.mainImage">
+                    <img :src="image" v-for="image in item.extraImages">
+                </div>
+                <div class="itemMobileDescription">
+                    <p v-html="item.description"></p>
+                </div>
+                <div class="itemMobileBuy">
+                    <h1>Стоимость: {{ item.price }}р.</h1>
+                    <div class="buyButton" @click="buy(item.name)"><p>Купить ➤</p></div>
+                </div>
+                <div class="itemMobileLine"></div>
+            </div>
         </div>
         <div class="aboutMe">
             <div class="aboutMeName">

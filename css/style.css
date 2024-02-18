@@ -347,6 +347,75 @@ a.link {
     /* background: rgb(180, 180, 180);
     border-radius: 15px 15px 0 0; */
 }
+.itemMobile {
+    display: none;
+    width: 100%;
+}
+.itemMobileName {
+    height: 70px;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.itemMobileName h1 {
+    font-size: 25px;
+    color: var(--green);
+    white-space: nowrap;
+    line-height: 100%;
+}
+.itemMobilePictures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+.itemMobilePictures img {
+    margin-bottom: 20px;
+    width: 70vw;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+.itemMobileDescription {
+    width: 100%;
+}
+.itemMobileDescription p {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.itemMobileBuy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemMobileBuy h1 {
+    font-size: 25px;
+    color: var(--green);
+}
+.itemMobileBuy .buyButton {
+    position: relative;
+    margin-top: 15px;
+    width: 118px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange);
+}
+.itemMobileBuy .buyButton p {
+    color: white;
+    font-size: 20px;
+    font-weight: 350;
+}
+.itemMobileLine {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid var(--orange);
+    margin-bottom: 20px;
+}
 
 @media (min-width: 3000px) and (max-width: 4000px) {
     #app {
@@ -956,6 +1025,150 @@ a.link {
     }
 }
 @media (min-width: 0px) and (max-width: 700px) {
+    .item, .itemLine {
+        display: none;
+    }
+    .itemMobile {
+        display: block;
+    }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+    #app {
+        width: 90vw;
+    }
+    .header {
+        height: 70px;
+    }
+    .header h1 {
+        font-size: 16px;
+    }
+    .headerPicture {
+        height: 120px;
+    }
+    .headerPicture h1 {
+        top: 10%;
+        left: 50vw;
+        font-size: 3vw;
+        line-height: 1;
+    }
+    .headerPicture h2 {
+        bottom: 2px;
+        left: 50vw;
+        font-size: 2vw;
+    }
+    .aboutMeName {
+        height:50px;
+
+    }
+    .aboutMeName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .aboutMeContent {
+        height: auto;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .aboutMeContent img {
+        width: 70vw;
+    }
+    .aboutMeContent p {
+        width: 400px;
+        width: 90vw;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    .reviewName {
+        height: 50px;
+    }
+    .reviewName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .review {
+        margin-bottom: 30px;
+    }
+    .review img {
+        width: 120px;
+        height: 120px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .review p {
+        width: 100%;
+        font-size: 12px;
+    }
+    .formBuy {
+        align-items: center;
+        width: 90vw;
+    }
+    .formBuyName {
+        height: 50px;
+    }
+    .formBuyName h1 {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .formArea {
+        flex-direction: column-reverse;
+    }
+    .form {
+        width: 80vw;
+        height: 190px;
+        padding: 15px 5vw;
+    }
+    .form input {
+        padding: 2px 3px;
+        height: 40px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .form textarea {
+        padding:  2px 3px;
+        font-size: 20px;
+        min-height: 150px;
+        border-radius: 5px;
+    }
+    .form .buyButton {
+        bottom: 20px;
+        width: 150px;
+        height: 40px;
+    }
+    .form .buyButton p {
+        font-size: 20px;
+    }
+    .formDescription {
+        width: 90vw;
+    }
+    .formDescription p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .socials {
+        bottom: -45px;
+        right: 0;
+        height: 35px;
+    }
+    .social {
+        margin-bottom:7px;
+    }
+    .link {
+        margin-left: 10px;
+    }
+    .link img {
+        margin-right: 0;
+    }
+    .link p {
+        font-size: 15px;
+        display: none;
+    }
+    .footer {
+        z-index: -1;
+        height: 100px;
+    }
+}
+@media (min-width: 0px) and (max-width: 500px) {
     #app {
         width: 90vw;
     }
@@ -963,7 +1176,7 @@ a.link {
         height: 50px;
     }
     .header h1 {
-        font-size: 11px;
+        font-size: 14px;
     }
     .headerPicture {
         height: 90px;
@@ -979,72 +1192,70 @@ a.link {
         left: 50vw;
         font-size: 2.5vw;
     }
-    .item{
-        margin-top: 20px;
-    }
-    .item:first-child {
-        margin-top: 10px;
-    }
-    .itemName {
-        height: 40px;
-        margin-bottom: 5px;
-    }
-    .itemName h1 {
-        font-size: 1.2em;
-    }
-    .itemLine {
-        display: none;
-        margin-top: 4px;
-        border: 1px solid var(--orange);
-    }
-    .itemMain {
-        height: auto;
-        flex-direction: column;
+    .itemMobileName {
+        height: 50px;
+        width: auto;
+        display: flex;
         align-items: center;
     }
-    .itemMain p {
-        margin-bottom: 40px;
+    .itemMobileName h1 {
+        font-size: 25px;
+        color: var(--green);
+        white-space: nowrap;
+        line-height: 100%;
     }
-    .item:nth-child(even) .itemName {
-        flex-direction: row
+    .itemMobilePictures {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
     }
-    .item:nth-child(even) .itemMain {
-        flex-direction: column
-    }
-    .itemMain img{
-        width: 80vw;
-        height: 80vw;
+    .itemMobilePictures img {
+        margin-bottom: 20px;
+        width: 70vw;
+        height: auto;
+        object-fit: contain;
         border-radius: 15px;
+    }
+    .itemMobileDescription {
+        width: 100%;
+    }
+    .itemMobileDescription p {
+        color: black;
+        font-size: 18px;
+        font-weight: 400;
         margin-bottom: 10px;
     }
-    .itemMainCard {
-        width: 100%;
-    }
-    .itemMainCard p {
-        font-size: 15px;
-    }
-    .itemMainCard h1 {
-        font-size: 20px;
-    }
-    .buyButton {
-        bottom: 3px;
-        width: 100px;
-        height: 30px;
-    }
-    .buyButton p {
-        margin: 0;
-        font-size: 20px;
-    }
-    .itemExtraPictures {
-        margin-top: 10px;
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
+    .itemMobileBuy {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
-    .itemExtraPictures img {
-        width: 80vw;
+    .itemMobileBuy h1 {
+        font-size: 25px;
+        color: var(--green);
+    }
+    .itemMobileBuy .buyButton {
+        position: relative;
+        margin-top: 15px;
+        width: 118px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--orange);
+    }
+    .itemMobileBuy .buyButton p {
+        color: white;
+        font-size: 20px;
+        font-weight: 350;
+    }
+    .itemMobileLine {
+        width: 100%;
         margin-top: 10px;
+        border: 1px solid var(--orange);
+        margin-bottom: 20px;
     }
     .aboutMeName {
         margin-top: 20px;
