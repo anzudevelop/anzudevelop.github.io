@@ -1136,22 +1136,22 @@ a.link {
         margin-bottom: 10px;
     }
     .socials {
-        bottom: -35px;
-        left: 0;
-        height: 25px;
-        justify-content: space-between;
+        bottom: -45px;
+        right: 0;
+        height: 35px;
     }
     .social {
         margin-bottom:7px;
     }
     .link {
-        margin-left: 20px;
+        margin-left: 10px;
     }
     .link img {
-        margin-right: 7px;
+        margin-right: 0;
     }
     .link p {
         font-size: 15px;
+        display: none;
     }
     .footer {
         z-index: -1;
