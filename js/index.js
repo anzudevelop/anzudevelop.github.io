@@ -1,6 +1,3 @@
-import itemsObject from '../data/items.json' assert { type: "json" };
-import reviewsObject from '../data/reviews.json' assert { type: "json" };
-
 const app = new Vue({
     el: "#app",
     data: {

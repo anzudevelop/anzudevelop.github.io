@@ -87,6 +87,7 @@ p {font-weight: 350; margin: 0;}
     background: var(--main-bg-color);
 }
 .headerMobileMenuClose {
+    z-index: 6;
     position: absolute;
     top: 20px;
     right: 20px;
