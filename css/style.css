@@ -67,10 +67,12 @@ p {font-weight: 350; margin: 0;}
 }
 .headerMobileMenuHide {
     position: fixed;
+    z-index: -5;
     top: 0;
-    left: -100vw;
+    left: 0vw;
     width: 100vw;
     height: 100vh;
+    opacity: 0;
     transition: 0.5s;
 }
 .headerMobileMenuShow {
@@ -81,6 +83,7 @@ p {font-weight: 350; margin: 0;}
     width: 100vw;
     height: 100vh;
     transition: 0.5s;
+    opacity: 1;
     background: var(--main-bg-color);
 }
 .headerMobileMenuClose {
