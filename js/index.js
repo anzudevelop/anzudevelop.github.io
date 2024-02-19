@@ -4,6 +4,9 @@ const app = new Vue({
         items: itemsObject,
         reviews: reviewsObject,
         buyItem: '',
+        buyName: '',
+        buyPhone: '',
+        buyComment: '',
         headerMobileMenu: 'headerMobileMenuHide',
         isCompleteBuy: false,
     },
@@ -25,11 +28,32 @@ const app = new Vue({
                 behavior: 'smooth'
             });
         },
-        completeOrder: function() {
+        completeOrder: async function() {
             this.isCompleteBuy = true
             setTimeout(() => {
+                this.buyItem = ''
+                this.buyName = ''
+                this.buyPhone = ''
+                this.buyComment = ''
                 this.isCompleteBuy = false
             }, 5000)
+
+            let data = {
+                "orderName": this.buyItem,
+                "personName": this.buyName,
+                "phone": this.buyPhone,
+                "comment": this.buyComment,
+            };
+              
+            await fetch('http://127.0.0.1:3000/order', {
+                method: 'POST',
+                mode: 'no-cors',
+                cache: "no-cache",
+                headers: {
+                    "Content-Type": "text/plain"
+                },
+                body: JSON.stringify(data)
+            });
         }
     },
 })

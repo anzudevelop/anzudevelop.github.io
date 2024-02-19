@@ -124,9 +124,9 @@
             <div class="formArea">
                 <div class="form" v-show="!isCompleteBuy">
                     <input type="text" placeholder="Наименование изделия" v-model="buyItem">
-                    <input type="text" placeholder="Ваше имя">
-                    <input type="text" placeholder="Телефон">
-                    <textarea type="text" placeholder="Комментарий к заказу"></textarea>
+                    <input type="text" placeholder="Ваше имя" v-model="buyName">
+                    <input type="text" placeholder="+7 (___) ___-____" v-model="buyPhone">
+                    <textarea type="text" placeholder="Комментарий к заказу" v-model="buyComment"></textarea>
                     <div class="buyButton" @click="completeOrder()"><p>Отправить ➤</p></div>
                 </div>
                 <div class="form" v-show="isCompleteBuy" style="display: none;">
