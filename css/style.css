@@ -25,6 +25,7 @@ p {font-weight: 350; margin: 0;}
 #app {
     position: relative;
     width: 1140px;
+    overflow: hidden;
 }
 .header {
     width: 100%;
@@ -41,6 +42,84 @@ p {font-weight: 350; margin: 0;}
 }
 .header h1:nth-child(odd):hover {
     color: var(--green-hover);
+}
+.header img {
+    margin: 0 0 0 auto;
+    height: 60%;
+    width: auto;
+    object-fit: contain;
+}
+.headerMobile {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+    margin-bottom: 10px;
+}
+.headerMobile img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+.headerMobile .burger {
+    height: 70%;
+}
+.headerMobileMenuHide {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s;
+}
+.headerMobileMenuShow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s;
+    background: var(--main-bg-color);
+}
+.headerMobileMenuClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerMobileMenuClose p {
+    font-size: 40px;
+    color: var(--blue)
+}
+.headerMobileMenuClose:hover p {
+    color: var(--blue-hover)
+}
+.headerMobileMenuList {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.headerMobileMenuList h1 {
+    font-size: 40px;
+    color: var(--blue);
+    margin: 10px 0;
+}
+.headerMobileMenuList:hover h1 {
+    color: var(--blue-hover);
 }
 .headerPicture {
     position: relative;
@@ -114,6 +193,16 @@ p {font-weight: 350; margin: 0;}
     height: 100%;
     border-radius: 15px;
     object-fit: contain;
+    transition: 1s;
+}
+.scale {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.itemMain img:hover {
+    scale: 1.1;
 }
 .itemMainCard {
     position: relative;
@@ -164,6 +253,10 @@ p {font-weight: 350; margin: 0;}
     height: 100%;
     object-fit: contain;
     border-radius: 15px;
+    transition: 1s;
+}
+.itemExtraPictures img:hover {
+    scale: 1.1;
 }
 .aboutMeName {
     height: 130px;
@@ -415,6 +508,16 @@ a.link {
     margin-top: 10px;
     border: 1px solid var(--orange);
     margin-bottom: 20px;
+}
+.completeBuy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--blue);
+    width: 90%;
+    font-size: 250%;
+    text-align: center;
 }
 
 @media (min-width: 3000px) and (max-width: 4000px) {
@@ -1025,11 +1128,14 @@ a.link {
     }
 }
 @media (min-width: 0px) and (max-width: 700px) {
-    .item, .itemLine {
+    .item, .itemLine, .header {
         display: none;
     }
-    .itemMobile {
+    .itemMobile, .headerMobile {
         display: block;
+    }
+    .headerMobile {
+        display: flex;
     }
 }
 @media (min-width: 500px) and (max-width: 700px) {
