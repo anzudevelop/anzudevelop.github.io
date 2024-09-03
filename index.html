@@ -7,14 +7,22 @@
     <title>Web Tg</title>
 </head>
 <body>
-    <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
+    <div id="app">
+        <div>
+            <p>{{ user.first_name }}</p>
+            <p>{{ user.last_name }}</p>
+            <p>{{ user.username }}</p>
+            <p>{{ user.language_code }}</p>
+            <p>{{ user.id }}</p>
+        </div>
+        <p>какой-то текст</p> <!--Просто текст для проверки-->
+        <a class="link" href="vk.com">Ссылка</a> <!--Просто ссылка для проверки-->
+        <p class="hint">Какая-то подсказка</p> <!--Просто текст-подсказка для проверки-->
+        <div class="button" @click="toggleMainButton()">Show/Hide Main Button</div> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
+        <button class="button" @click="changeMainButtonActive()">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
     </div>
-    <p>Just text</p> <!--Просто текст для проверки-->
-    <a class="link" href="https://mihailgok.ru">Link</a> <!--Просто ссылка для проверки-->
-    <p class="hint">Some little hint</p> <!--Просто текст-подсказка для проверки-->
-    <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
-    <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
     
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="./vue.min.js"></script>
     <script src="./js/index.js"></script>
