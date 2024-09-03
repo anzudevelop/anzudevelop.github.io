@@ -1,59 +1,48 @@
-const app = new Vue({
-    el: "#app",
-    data: {
-        items: itemsObject,
-        reviews: reviewsObject,
-        buyItem: '',
-        buyName: '',
-        buyPhone: '',
-        buyComment: '',
-        headerMobileMenu: 'headerMobileMenuHide',
-        isCompleteBuy: false,
-    },
-    methods: {
-        scrollClick: function(target) {
-            document.getElementById(target).scrollIntoView({
-                behavior: 'smooth'
-            });
-        },
-        scrollMobileClick: function(target) {
-            this.headerMobileMenu = 'headerMobileMenuHide'
-            document.getElementById('m' + target).scrollIntoView({
-                behavior: 'smooth'
-            });
-        },
-        buy: function(name) {
-            this.buyItem = name
-            document.getElementById('buy').scrollIntoView({
-                behavior: 'smooth'
-            });
-        },
-        completeOrder: async function() {
-            this.isCompleteBuy = true
-            setTimeout(() => {
-                this.buyItem = ''
-                this.buyName = ''
-                this.buyPhone = ''
-                this.buyComment = ''
-                this.isCompleteBuy = false
-            }, 5000)
+let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
-            let data = {
-                "orderName": this.buyItem,
-                "personName": this.buyName,
-                "phone": this.buyPhone,
-                "comment": this.buyComment,
-            };
-              
-            await fetch('http://127.0.0.1:3000/order', {
-                method: 'POST',
-                mode: 'no-cors',
-                cache: "no-cache",
-                headers: {
-                    "Content-Type": "text/plain"
-                },
-                body: JSON.stringify(data)
-            });
-        }
-    },
-})
+tg.expand(); //расширяем на все окно  
+
+tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
+tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
+
+btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	if (tg.MainButton.isVisible){ //если кнопка показана 
+		tg.MainButton.hide() //скрываем кнопку 
+	}
+  else{ //иначе
+  	tg.MainButton.show() //показываем 
+  }
+});
+
+let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
+btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	if (tg.MainButton.isActive){ //если кнопка показана 
+		tg.MainButton.setParams({"color": "#E0FFFF"}); //меняем цвет
+		tg.MainButton.disable() //скрываем кнопку 
+	}
+	else{ //иначе
+		tg.MainButton.setParams({"color": "#143F6B"}); //меняем цвет
+		tg.MainButton.enable() //показываем 
+	}
+});
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	tg.sendData("some string that we need to send"); 
+	//при клике на основную кнопку отправляем данные в строковом виде
+});
+
+let usercard = document.getElementById("usercard"); //получаем блок usercard 
+
+let profName = document.createElement('p'); //создаем параграф
+profName.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name}
+${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+//выдем имя, "фамилию", через тире username и код языка
+usercard.appendChild(profName); //добавляем 
+
+let userid = document.createElement('p'); //создаем еще параграф 
+userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+usercard.appendChild(userid); //добавляем
