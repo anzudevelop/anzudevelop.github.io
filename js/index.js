@@ -7,6 +7,7 @@ const app = new Vue({
     },
     beforeMount() {
         this.user = tg.initDataUnsafe.user
+        this.user = null //----------------
     },
     methods: {
         toggleMainButton: function() {
