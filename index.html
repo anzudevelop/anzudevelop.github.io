@@ -26,25 +26,23 @@
 
     <div id="scoreapp">
         <div class="header">
-            <button class="btn primary">Новая игра</button>
-            <button class="btn hiden">Удалить кон</button>
-            <button class="btn primary">Добавить кон</button>
+            <button class="btn primary" @click="newGame">Новая игра</button>
+            <button :class="['btn', {'hiden': selectedColumn === null, 'primary': selectedColumn != null}]" @click="removeRound">Удалить кон</button>
+            <button class="btn primary" @click="addRound">Добавить кон</button>
         </div>
         <div class="content" v-if="activeWindow === windowsEnum.score">
             <table>
                 <thead>
                     <tr>
                         <th>Игрок</th>
-                        <th>№1</th>
-                        <th>№2</th>
-                        <th>№3</th>
+                        <th v-for="i in roundsCount" @click="selectedColumn = i" :class="[{'selectedColumn': selectedColumn === i}]">№{{ i }}</th>
                         <th>Итого</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="player in players">
                         <td>{{ player.name }}</td>
-                        <td v-for="(score, i) in player.score">{{ score }}</td>
+                        <td v-for="(score, i) in player.score" :class="[{'selectedColumn': selectedColumn === i + 1}]">{{ score }}</td>
                         <td>{{ player.score.reduce((partialSum, a) => partialSum + a, 0) }}</td>
                     </tr>
                 </tbody>
