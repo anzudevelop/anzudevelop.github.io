@@ -43,14 +43,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(player, idx) in players">
-                        <td>{{ player }}</td>
+                    <tr v-for="player in players">
+                        <td>{{ player.name }}</td>
                         <td
-                            v-for="(score, i) in scores[idx]"
+                            v-for="(scoreValue, i) in player.score"
                             :class="['scoreValue', {'selectedColumn': selectedColumn === i + 1}]"
-                            ><input type="number" v-model="score">
+                            ><input type="number" v-model="scoreValue">
                         </td>
-                        <td >{{ scores[idx].reduce((partialSum, a) => partialSum + a, 0) }}</td>
+                        <td>{{ player.score.reduce((partialSum, a) => partialSum + a, 0) }}</td>
                     </tr>
                 </tbody>
             </table>
