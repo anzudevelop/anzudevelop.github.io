@@ -4,27 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styleScores.css">
     <title>Web Tg</title>
 </head>
 <body>
     <div id="app">
-        <div>
+        <div v-if="user">
             <p>{{ user.first_name }}</p>
             <p>{{ user.last_name }}</p>
             <p>{{ user.username }}</p>
             <p>{{ user.language_code }}</p>
             <p>{{ user.id }}</p>
+        
+            <p>какой-то текст</p> <!--Просто текст для проверки-->
+            <a class="link" href="vk.com">Ссылка</a> <!--Просто ссылка для проверки-->
+            <p class="hint">Какая-то подсказка</p> <!--Просто текст-подсказка для проверки-->
+            <div class="button" @click="toggleMainButton()">Show/Hide Main Button</div> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
+            <button class="button" @click="changeMainButtonActive()">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
         </div>
-        <p>какой-то текст</p> <!--Просто текст для проверки-->
-        <a class="link" href="vk.com">Ссылка</a> <!--Просто ссылка для проверки-->
-        <p class="hint">Какая-то подсказка</p> <!--Просто текст-подсказка для проверки-->
-        <div class="button" @click="toggleMainButton()">Show/Hide Main Button</div> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
-        <button class="button" @click="changeMainButtonActive()">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
+    </div>
+
+    <div id="scoreapp">
+        <div class="header">
+            <button class="btn primary">Новая игра</button>
+            <button class="btn hiden">Удалить кон</button>
+            <button class="btn primary">Добавить кон</button>
+        </div>
+        <div class="content" v-if="activeWindow === windowsEnum.score">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Игрок</th>
+                        <th>№1</th>
+                        <th>№2</th>
+                        <th>№3</th>
+                        <th>Итого</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="player in players">
+                        <td>{{ player.name }}</td>
+                        <td v-for="(score, i) in player.score">{{ score }}</td>
+                        <td>{{ player.score.reduce((partialSum, a) => partialSum + a, 0) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content" v-if="activeWindow === windowsEnum.players">
+            Игроки
+        </div>
+        <div class="content" v-if="activeWindow === windowsEnum.settings">
+            Настроки
+        </div>
+        <div class="footer">
+            <button :class="['btn', {'primary': activeWindow === windowsEnum.score}]" @click="activeWindow = windowsEnum.score">Очки</button>
+            <button :class="['btn', {'primary': activeWindow == windowsEnum.players}]" @click="activeWindow = windowsEnum.players">Игроки</button>
+            <button :class="['btn', {'primary': activeWindow === windowsEnum.settings}]" @click="activeWindow = windowsEnum.settings">Настройки</button>
+        </div>
     </div>
     
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="./vue.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/score.js"></script>
 </body>
 </html>
