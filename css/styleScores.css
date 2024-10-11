@@ -1,5 +1,6 @@
 body {
     background: rgb(240, 240, 240);
+    font-family: "Roboto", sans-serif;
 }
 .header {
     position: fixed;
@@ -67,4 +68,14 @@ body {
 }
 .selectedColumn {
     background: rgb(195, 233, 212);
+}
+.scoreValue {
+    max-width: 30px;
+}
+td input {
+    max-width: 100%;
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 22px;
 }

@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/styleScores.css">
     <title>Web Tg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -40,10 +43,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="player in players">
-                        <td>{{ player.name }}</td>
-                        <td v-for="(score, i) in player.score" :class="[{'selectedColumn': selectedColumn === i + 1}]">{{ score }}</td>
-                        <td>{{ player.score.reduce((partialSum, a) => partialSum + a, 0) }}</td>
+                    <tr v-for="(player, idx) in players">
+                        <td>{{ player }}</td>
+                        <td
+                            v-for="(score, i) in scores[idx]"
+                            :class="['scoreValue', {'selectedColumn': selectedColumn === i + 1}]"
+                            ><input type="number" v-model="score">
+                        </td>
+                        <td >{{ scores[idx].reduce((partialSum, a) => partialSum + a, 0) }}</td>
                     </tr>
                 </tbody>
             </table>
