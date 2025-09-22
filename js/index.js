@@ -9,29 +9,23 @@ let app = new Vue({
     }
   },
   mounted() {
-    document.addEventListener('DOMContentLoaded', () => {
-      const tg = window.Telegram?.WebApp;
-      const appContainer = document.querySelector('#app');
-
-      if (tg && appContainer) {
-        // установка высоты контейнера под Telegram viewport
-        const updateHeight = () => {
-          appContainer.style.height = tg.viewportHeight + 'px';
-        };
-
-        updateHeight(); // при загрузке
-        tg.onEvent('viewportChanged', updateHeight); // при изменении ориентации/размера
-      }
-    });
-    
     const tg = window.Telegram?.WebApp;
+    const appContainer = document.querySelector('#app');
+
+    if (tg && appContainer) {
+      const updateHeight = () => {
+        appContainer.style.height = tg.viewportHeight + 'px';
+        appContainer.style.overflowX = 'hidden'; // жёстко отключаем скролл
+      };
+
+      updateHeight();
+      tg.onEvent('viewportChanged', updateHeight);
+    }
+
     if (tg) {
-      // можно сразу использовать unsafe данные для отображения
       this.tgUser = tg.initDataUnsafe?.user || null;
-      // подписанная строка для валидации на сервере
       this.tgInitData = tg.initData;
 
-      // сразу отправляем на сервер для проверки и получения безопасной сессии
       fetch('/telegram/init', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -39,13 +33,12 @@ let app = new Vue({
       })
         .then(r => r.json())
         .then(data => {
-          // после проверки сервер вернёт безопасные данные, можно использовать в компоненте
           this.tgUser = data.user;
           console.log('Проверенные данные:', data);
         })
-        .catch(err);
+        .catch(err => console.error(err));
     } else {
-      console.log('Не в Telegram WebApp — fallback или виджет логина');
+      console.log('Не в Telegram WebApp — fallback');
     }
   },
   methods: {

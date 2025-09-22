@@ -23,15 +23,25 @@ body {
   background: var(--background-color);
   height: 100%;
 }
+html,
+body,
+#app {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* убираем горизонтальный скролл */
+}
 
 /* Основной контейнер */
 #app {
-  width: 100%;
-  height: 100%;
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Шрифты и текст */
@@ -49,11 +59,11 @@ b {
 
 /* Основное меню */
 .mainMenu {
-  position: relative;
-  padding: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 7%;
+  gap: 20px;
+  /* стабильнее на iPhone */
+  box-sizing: border-box;
 }
 
 .mainMenu button {
