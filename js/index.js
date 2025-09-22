@@ -9,6 +9,21 @@ let app = new Vue({
     }
   },
   mounted() {
+    document.addEventListener('DOMContentLoaded', () => {
+      const tg = window.Telegram?.WebApp;
+      const appContainer = document.querySelector('#app');
+
+      if (tg && appContainer) {
+        // установка высоты контейнера под Telegram viewport
+        const updateHeight = () => {
+          appContainer.style.height = tg.viewportHeight + 'px';
+        };
+
+        updateHeight(); // при загрузке
+        tg.onEvent('viewportChanged', updateHeight); // при изменении ориентации/размера
+      }
+    });
+    
     const tg = window.Telegram?.WebApp;
     if (tg) {
       // можно сразу использовать unsafe данные для отображения
@@ -28,7 +43,7 @@ let app = new Vue({
           this.tgUser = data.user;
           console.log('Проверенные данные:', data);
         })
-        .catch(err => console.error('Ошибка запроса:', err));
+        .catch(err);
     } else {
       console.log('Не в Telegram WebApp — fallback или виджет логина');
     }
