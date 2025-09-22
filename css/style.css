@@ -1,0 +1,61 @@
+* {
+  --background-color: #27292B;
+  --font-main-color: #060606;
+  --font-extra-color: #414141;
+  --font-primary-color: #f0f0f0;
+  --primary-color: #20D490;
+  --container-color: #f0f0f0;
+  --border-radius: 20px;
+}
+body {
+  background: var(--background-color);
+  /* touch-action: auto; */
+}
+h1, h2, h3, h4, h5, h6, p, b {
+  font-weight: 500;
+  font-family: 'Gilroy';
+}
+.mainMenu {
+  position: relative;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7%;
+}
+.mainMenu button {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--container-color);
+  color: var(--font-main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.mainMenu button img {
+  position: relative;
+  margin-top: 10%;
+  height: 40%;
+  width: auto;
+  object-fit: contain;
+}
+.mainMenu button h1 {
+  height: 50%;
+  position: relative;
+  margin: 0;
+  font-size: 1.2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainMenu button:hover, .mainMenu button:active {
+  filter: brightness(85%);
+}
+.icon {
+  filter: invert(80%)
+}
