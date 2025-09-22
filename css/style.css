@@ -7,8 +7,7 @@
   --container-color: #f0f0f0;
   --border-radius: 20px;
 }
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,7 +27,6 @@ h1, h2, h3, h4, h5, h6, p, b {
 }
 .mainMenu {
   position: relative;
-  padding: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7%;
