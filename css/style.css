@@ -59,6 +59,8 @@ b {
 
 /* Основное меню */
 .mainMenu {
+  margin-left: 10%;
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
