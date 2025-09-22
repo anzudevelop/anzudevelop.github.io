@@ -57,15 +57,19 @@ b {
   font-family: 'Gilroy';
 }
 
-/* Основное меню */
+.mainMenuWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .mainMenu {
-  margin-left: 10%;
-  width: 80%;
+  width: 100%;
+  max-width: 400px;
+  /* ограничение, чтобы не растягивалось */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  /* стабильнее на iPhone */
-  box-sizing: border-box;
 }
 
 .mainMenu button {

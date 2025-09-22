@@ -12,30 +12,33 @@
 
 <body>
   <div id="app">
-    <div class="mainMenu" v-if="page == pageEnum.main">
-      <button @click="page = pageEnum.newEvent">
-        <img class="icon" src="./img/icons/plus.svg">
-        <h1>Новое событие</h1>
-      </button>
-      <button @click="page = pageEnum.garage">
-        <img class="icon" src="./img/icons/garage.svg">
-        <h1>Мой гараж</h1>
-      </button>
-      <button @click="page = pageEnum.eventList">
-        <img class="icon" src="./img/icons/list.svg">
-        <h1>Список событий</h1>
-      </button>
-      <button @click="page = pageEnum.info">
-        <img class="icon" src="./img/icons/info.svg">
-        <h1>Помощь</h1>
-      </button>
+    <div class="mainMenuWrapper">
+      <div class="mainMenu" v-if="page == pageEnum.main">
+        <button @click="page = pageEnum.newEvent">
+          <img class="icon" src="./img/icons/plus.svg">
+          <h1>Новое событие</h1>
+        </button>
+        <button @click="page = pageEnum.garage">
+          <img class="icon" src="./img/icons/garage.svg">
+          <h1>Мой гараж</h1>
+        </button>
+        <button @click="page = pageEnum.eventList">
+          <img class="icon" src="./img/icons/list.svg">
+          <h1>Список событий</h1>
+        </button>
+        <button @click="page = pageEnum.info">
+          <img class="icon" src="./img/icons/info.svg">
+          <h1>Помощь</h1>
+        </button>
+      </div>
+      <h1 v-if="page == pageEnum.info" style="color: red; font-size: 14px">
+        {{ data }}
+      </h1>
+      <h1 v-if="page == pageEnum.info" style="color: green; font-size: 14px">
+        {{ data2 }}
+      </h1>
     </div>
-    <h1 v-if="page == pageEnum.info" style="color: red; font-size: 14px">
-      {{ data }}
-    </h1>
-    <h1 v-if="page == pageEnum.info" style="color: green; font-size: 14px">
-      {{ data2 }}
-    </h1>
+
   </div>
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
