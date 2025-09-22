@@ -8,16 +8,12 @@
   --border-radius: 20px;
 }
 body {
-  background: var(--tg-theme-bg-color);
+  background: var(--background-color);
   /* touch-action: auto; */
 }
 h1, h2, h3, h4, h5, h6, p, b {
   font-weight: 500;
   font-family: 'Gilroy';
-  color: var(--tg-theme-text-color);
-}
-.hint-color {
-  color: var(--tg-theme-hint-color);
 }
 .mainMenu {
   position: relative;
@@ -32,7 +28,8 @@ h1, h2, h3, h4, h5, h6, p, b {
   aspect-ratio: 1 / 1;
   border-radius: var(--border-radius);
   border: none;
-  background-color: var(--tg-theme-button-color);
+  background-color: var(--container-color);
+  color: var(--font-main-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +52,6 @@ h1, h2, h3, h4, h5, h6, p, b {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--tg-theme-button-text-color);
 }
 .mainMenu button:hover, .mainMenu button:active {
   filter: brightness(85%);
