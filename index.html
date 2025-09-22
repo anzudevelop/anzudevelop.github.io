@@ -33,12 +33,15 @@
     <h1 v-if="page == pageEnum.info" style="color: red; font-size: 14px">
       {{ data }}
     </h1>
+    <h1 v-if="page == pageEnum.info" style="color: green; font-size: 14px">
+      {{ data2 }}
+    </h1>
   </div>
    
   <script src="js/vue.js"></script>
+  <script src="js/index.js"></script>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script src="js/tg.js"></script>
-  <script src="js/index.js"></script>
 </body>
 
 </html>
