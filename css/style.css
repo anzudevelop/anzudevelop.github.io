@@ -3,44 +3,35 @@ body {
   padding: 0;
 }
 #app {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 5vw;
-  box-sizing: border-box;
+  position: relative;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-top: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .conteiner {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  width: 100%;
-  background: rgb(250, 167, 167);
-}
-
-.conteiner button {
   position: relative;
   width: 100%;
+  height: 100%;
+  background: rgb(255, 164, 164);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.conteiner button {
+  position: relative;
+  width: calc(50% - 10px);
+  /* две кнопки в ряд */
+  aspect-ratio: 1 / 1;
+  /* делаем квадрат */
   background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
   border: none;
   border-radius: 20px;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* квадрат через before */
-.conteiner button::before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.conteiner button>* {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
