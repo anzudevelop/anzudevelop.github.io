@@ -9,39 +9,11 @@
   --border-radius: 20px;
 }
 
-/* Сброс стандартных отступов и box-sizing */
-* {
-  box-sizing: border-box;
-}
-
-html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  /* убираем горизонтальный скролл */
   background: var(--background-color);
   height: 100%;
-}
-html,
-body,
-#app {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  /* убираем горизонтальный скролл */
-}
-
-/* Основной контейнер */
-#app {
-  padding-left: env(safe-area-inset-left, 0);
-  padding-right: env(safe-area-inset-right, 0);
-  padding-top: env(safe-area-inset-top, 0);
-  padding-bottom: env(safe-area-inset-bottom, 0);
-  box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 /* Шрифты и текст */
@@ -58,15 +30,18 @@ b {
 }
 
 .mainMenuWrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 90%;
+  height: 100%;
 }
 
 .mainMenu {
-  width: 90%;
-  max-width: 400px;
-  /* ограничение, чтобы не растягивалось */
+  position: relative;
+  width: 100%;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
