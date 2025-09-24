@@ -1,6 +1,17 @@
+/* Переменные */
+:root {
+  --background-color: #27292B;
+  --font-main-color: #060606;
+  --font-extra-color: #414141;
+  --font-primary-color: #f0f0f0;
+  --primary-color: #20D490;
+  --container-color: #f0f0f0;
+  --border-radius: 20px;
+}
 body {
   margin: 0;
   padding: 0;
+  background: var(--background-color);
 }
 
 #app {
@@ -17,7 +28,6 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: rgb(255, 164, 164);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -30,12 +40,11 @@ body {
   /* две кнопки в ряд */
   aspect-ratio: 1 / 1;
   /* делаем квадрат */
-  background: lightblue;
+  background: var(--container-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
   border: none;
   border-radius: 20px;
 }
@@ -51,12 +60,12 @@ body {
 .conteiner button h1 {
   height: 50%;
   margin: 0;
-  font-size: 0.8em;
+  font-size: 2em;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(255, 46, 46);
+  color: var(--font-main-color);
 }
 
 .conteiner button:hover,
@@ -65,5 +74,5 @@ body {
 }
 
 .icon {
-  filter: invert(40%);
+  filter: invert(50%);
 }

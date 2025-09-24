@@ -10,13 +10,21 @@
   <div id="app">
     <div class="conteiner">
       <button @click="page = pageEnum.newEvent">
-        <img class="icon" src="./img/icons/plus.svg">
-        <h1>Новое событие</h1>
-      </button>
-      <button>b</button>
-      <button>c</button>
-      <button>d</button>
-      <button>e</button>
+          <img class="icon" src="./img/icons/plus.svg">
+          <h1>Новое событие</h1>
+        </button>
+        <button @click="page = pageEnum.garage">
+          <img class="icon" src="./img/icons/garage.svg">
+          <h1>Мой гараж</h1>
+        </button>
+        <button @click="page = pageEnum.eventList">
+          <img class="icon" src="./img/icons/list.svg">
+          <h1>Список событий</h1>
+        </button>
+        <button @click="page = pageEnum.info">
+          <img class="icon" src="./img/icons/info.svg">
+          <h1>Помощь</h1>
+        </button>
     </div>
   </div>
 </body>
