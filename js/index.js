@@ -26,7 +26,7 @@ let app = new Vue({
       this.tgUser = tg.initDataUnsafe?.user || null;
       this.tgInitData = tg.initData;
 
-      fetch('/telegram/init', {
+      fetch('77.221.140.74:3000/telegram/init', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ initData: this.tgInitData })
