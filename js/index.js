@@ -10,26 +10,16 @@ let app = new Vue({
   },
   mounted() {
     const tg = window.Telegram?.WebApp;
-    const appContainer = document.querySelector('#app');
-
-    if (tg && appContainer) {
-      const updateHeight = () => {
-        appContainer.style.height = tg.viewportHeight + 'px';
-        appContainer.style.overflowX = 'hidden'; // жёстко отключаем скролл
-      };
-
-      updateHeight();
-      tg.onEvent('viewportChanged', updateHeight);
-    }
 
     if (tg) {
       this.tgUser = tg.initDataUnsafe?.user || null;
       this.tgInitData = tg.initData;
 
-      fetch('77.221.140.74:3000/telegram/init', {
+      fetch('http://77.221.140.74:3000/telegram/init', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ initData: this.tgInitData })
+        body: JSON.stringify({ initData: this.tgInitData }),
+        credentials: 'include' // <--- вот это важно!
       })
         .then(r => r.json())
         .then(data => {
@@ -37,6 +27,7 @@ let app = new Vue({
           console.log('Проверенные данные:', data);
         })
         .catch(err => console.error(err));
+
     } else {
       console.log('Не в Telegram WebApp — fallback');
     }
