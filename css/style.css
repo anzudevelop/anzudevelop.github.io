@@ -1,11 +1,11 @@
 /* Переменные */
 :root {
-  --background-color: #27292B;
-  --font-main-color: #060606;
+  --background-color: #1b263b;
+  --font-main-color: #0d1b2a;
   --font-extra-color: #414141;
   --font-primary-color: #f0f0f0;
   --primary-color: #20D490;
-  --container-color: #f0f0f0;
+  --container-color: #e0e1dd;
   --border-radius: 20px;
 }
 body {
@@ -13,6 +13,11 @@ body {
   padding: 0;
   background: var(--background-color);
   color: var(--container-color);
+}
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: bold;
+  font-style: normal;
 }
 
 #app {
@@ -23,6 +28,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+[v-cloak] {
+  display: none;
 }
 
 .conteiner {
@@ -75,5 +83,10 @@ body {
 }
 
 .icon {
-  filter: invert(50%);
+  filter: invert(48%) sepia(46%) saturate(671%) hue-rotate(173deg) brightness(82%) contrast(97%);
+}
+.debug {
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
